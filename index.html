@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>豚豚剧网页版-在线追短剧免费观看入口_短剧资源平台推荐</title>
+<meta name="description" content="豚豚剧网页版是专注短剧在线观看的资源平台，提供海量热门微短剧免费追更、全集在线播放与题材分类筛选，覆盖都市逆袭、古装甜宠、悬疑脑洞等类型，无需下载即可在浏览器中畅看，追剧更省心。">
+<meta name="keywords" content="豚豚剧网页版,短剧在线观看,微短剧免费追剧,短剧网页版入口,短剧资源平台">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231c1f3b'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ffd166' font-family='sans-serif'%3E豚%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+--tt-bg:#f6f7fb;
+--tt-card:#ffffff;
+--tt-ink:#1c1f2b;
+--tt-sub:#5d6478;
+--tt-line:#e6e8f0;
+--tt-main:#3a4bd8;
+--tt-main2:#7c5cff;
+--tt-acc:#ffb020;
+--tt-hot:#ff4d6d;
+--tt-radius:16px;
+--tt-shadow:0 6px 24px rgba(28,31,59,.08);
+--tt-shadow-h:0 12px 30px rgba(58,75,216,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+background:var(--tt-bg);color:var(--tt-ink);line-height:1.75;font-size:15px;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+h1,h2,h3,h4{line-height:1.35;font-weight:700}
+h2.tt-sec-t{font-size:22px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+h2.tt-sec-t::before{content:"";width:6px;height:22px;border-radius:4px;background:linear-gradient(180deg,var(--tt-main),var(--tt-main2))}
+section{padding:34px 0}
+.tt-sec-sub{color:var(--tt-sub);font-size:13.5px;margin-bottom:20px}
+
+/* 顶部导航 */
+.tt-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--tt-line)}
+.tt-nav-in{display:flex;align-items:center;gap:22px;height:62px}
+.tt-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:.5px}
+.tt-logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--tt-main),var(--tt-main2));color:#fff;display:grid;place-items:center;font-size:17px}
+.tt-nav-links{display:flex;gap:18px;font-size:14px;color:var(--tt-sub);flex:1;flex-wrap:wrap}
+.tt-nav-links a{padding:6px 2px;border-bottom:2px solid transparent;transition:.2s}
+.tt-nav-links a:hover{color:var(--tt-main);border-color:var(--tt-main)}
+.tt-nav-cta{background:linear-gradient(135deg,var(--tt-main),var(--tt-main2));color:#fff;padding:8px 18px;border-radius:999px;font-size:13.5px;font-weight:600;white-space:nowrap}
+
+/* Banner */
+.tt-hero{background:
+radial-gradient(900px 340px at 12% -10%,rgba(124,92,255,.18),transparent 70%),
+radial-gradient(760px 300px at 92% 6%,rgba(58,75,216,.16),transparent 72%),
+linear-gradient(180deg,#fbfcff,#f2f4fc);
+border-bottom:1px solid var(--tt-line);padding:44px 0 40px}
+.tt-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.tt-hero h1{font-size:34px;letter-spacing:.5px;margin-bottom:14px}
+.tt-hero h1 em{font-style:normal;color:var(--tt-main);background:linear-gradient(90deg,var(--tt-main),var(--tt-main2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tt-hero p{color:var(--tt-sub);font-size:15px;margin-bottom:8px}
+.tt-search{display:flex;margin:20px 0 16px;background:#fff;border-radius:999px;box-shadow:var(--tt-shadow);padding:5px;max-width:520px}
+.tt-search input{flex:1;border:0;outline:0;padding:9px 16px;font-size:14px;background:transparent;color:var(--tt-ink)}
+.tt-search button{border:0;cursor:pointer;background:linear-gradient(135deg,var(--tt-main),var(--tt-main2));color:#fff;padding:9px 22px;border-radius:999px;font-size:14px;font-weight:600}
+.tt-hero-tags{display:flex;flex-wrap:wrap;gap:9px}
+.tt-hero-tags a{font-size:13px;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--tt-line);color:var(--tt-sub);transition:.2s}
+.tt-hero-tags a:hover{color:var(--tt-main);border-color:var(--tt-main);transform:translateY(-2px)}
+.tt-hero-card{background:#fff;border-radius:20px;box-shadow:var(--tt-shadow);padding:20px;border:1px solid var(--tt-line)}
+.tt-hero-card h3{font-size:15px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.tt-hero-card h3 span{font-size:12px;color:var(--tt-hot);font-weight:600}
+.tt-mini-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed var(--tt-line);font-size:13.5px}
+.tt-mini-row:last-child{border-bottom:0}
+.tt-mini-idx{width:22px;height:22px;border-radius:7px;background:#eef0fb;color:var(--tt-main);display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}
+.tt-mini-row:nth-child(2) .tt-mini-idx{background:var(--tt-hot);color:#fff}
+.tt-mini-row:nth-child(3) .tt-mini-idx{background:var(--tt-acc);color:#fff}
+.tt-mini-row em{font-style:normal;color:var(--tt-sub);margin-left:auto;font-size:12px}
+
+/* 分类入口 */
+.tt-cats{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.tt-cat{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);padding:16px 10px;text-align:center;transition:.22s}
+.tt-cat:hover{transform:translateY(-4px);box-shadow:var(--tt-shadow-h);border-color:transparent}
+.tt-cat i{display:block;width:38px;height:38px;margin:0 auto 9px;border-radius:12px;background:linear-gradient(135deg,#eef0fb,#e3e7ff);display:grid;place-items:center;font-style:normal;font-size:17px;color:var(--tt-main)}
+.tt-cat b{display:block;font-size:13.5px}
+.tt-cat small{color:var(--tt-sub);font-size:11.5px}
+
+/* 推荐卡片 */
+.tt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tt-card{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);overflow:hidden;transition:.24s;display:flex;flex-direction:column}
+.tt-card:hover{transform:translateY(-5px);box-shadow:var(--tt-shadow-h);border-color:transparent}
+.tt-cover{height:132px;position:relative;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700}
+.tt-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.42))}
+.tt-cover span{position:relative;z-index:2;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.tt-cover .tt-badge{position:absolute;top:10px;right:10px;z-index:2;font-size:11px;background:rgba(255,255,255,.9);color:var(--tt-main);padding:3px 9px;border-radius:999px;font-weight:700}
+.tt-c1{background:linear-gradient(135deg,#3a4bd8,#7c5cff)}
+.tt-c2{background:linear-gradient(135deg,#ff7a45,#ffb020)}
+.tt-c3{background:linear-gradient(135deg,#12b886,#0ca678)}
+.tt-c4{background:linear-gradient(135deg,#e64980,#c2255c)}
+.tt-c5{background:linear-gradient(135deg,#1c7ed6,#22b8cf)}
+.tt-c6{background:linear-gradient(135deg,#5f3dc4,#7048e8)}
+.tt-c7{background:linear-gradient(135deg,#f76707,#e8590c)}
+.tt-c8{background:linear-gradient(135deg,#0b7285,#1098ad)}
+.tt-c9{background:linear-gradient(135deg,#6741d9,#9c36b5)}
+.tt-card-body{padding:14px 15px 16px;flex:1;display:flex;flex-direction:column}
+.tt-card-body h3{font-size:15.5px;margin-bottom:8px}
+.tt-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.tt-tags i{font-style:normal;font-size:11.5px;padding:2px 9px;border-radius:999px;background:#f1f3fb;color:var(--tt-main)}
+.tt-tags i.hot{background:#fff0f3;color:var(--tt-hot)}
+.tt-card-body p{font-size:13px;color:var(--tt-sub);flex:1}
+.tt-meta{display:flex;gap:14px;font-size:12px;color:#8b91a6;margin-top:12px;padding-top:10px;border-top:1px dashed var(--tt-line)}
+
+/* 最新更新列表 */
+.tt-updates{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);overflow:hidden}
+.tt-up-item{display:grid;grid-template-columns:1fr auto;gap:16px;padding:15px 20px;border-bottom:1px solid var(--tt-line);transition:.2s}
+.tt-up-item:last-child{border-bottom:0}
+.tt-up-item:hover{background:#fafbff}
+.tt-up-item h4{font-size:14.5px;margin-bottom:4px}
+.tt-up-item h4 b{color:var(--tt-main);font-weight:600;margin-right:8px}
+.tt-up-item p{font-size:13px;color:var(--tt-sub)}
+.tt-up-time{font-size:12px;color:#9aa0b4;white-space:nowrap;align-self:center}
+
+/* 正文解析 */
+.tt-article{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);padding:32px 34px}
+.tt-article h3{font-size:17px;margin:22px 0 10px;color:var(--tt-ink)}
+.tt-article h3:first-child{margin-top:0}
+.tt-article p{color:#3d4358;margin-bottom:12px;font-size:14.5px}
+.tt-quote{border-left:4px solid var(--tt-main);background:#f6f7fe;padding:14px 18px;border-radius:0 12px 12px 0;color:var(--tt-sub);font-size:14px;margin:16px 0}
+
+/* 数据看板 */
+.tt-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tt-stat{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);padding:22px;text-align:center}
+.tt-stat b{display:block;font-size:26px;color:var(--tt-main);letter-spacing:.5px}
+.tt-stat span{font-size:13px;color:var(--tt-sub)}
+
+/* 体验指南 */
+.tt-guide{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tt-guide-item{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:var(--tt-radius);padding:20px 22px;transition:.2s}
+.tt-guide-item:hover{box-shadow:var(--tt-shadow)}
+.tt-guide-item h3{font-size:15.5px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.tt-guide-item h3 i{font-style:normal;width:28px;height:28px;border-radius:9px;background:#eef0fb;color:var(--tt-main);display:grid;place-items:center;font-size:14px}
+.tt-guide-item p{font-size:13.5px;color:var(--tt-sub)}
+
+/* FAQ */
+.tt-faq{display:grid;gap:12px}
+.tt-faq details{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:14px;padding:0 20px;transition:.2s}
+.tt-faq details[open]{box-shadow:var(--tt-shadow);border-color:#d9ddff}
+.tt-faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;font-size:14.5px;display:flex;justify-content:space-between;gap:12px}
+.tt-faq summary::-webkit-details-marker{display:none}
+.tt-faq summary::after{content:"+";color:var(--tt-main);font-weight:700;font-size:18px;line-height:1}
+.tt-faq details[open] summary::after{content:"−"}
+.tt-faq details p{padding:0 0 16px;font-size:13.8px;color:var(--tt-sub)}
+
+/* 评论 */
+.tt-comments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tt-cmt{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:14px;padding:16px 18px}
+.tt-cmt-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.tt-ava{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:700;flex:none}
+.tt-cmt-head b{font-size:13.5px}
+.tt-cmt-head span{font-size:11.5px;color:#9aa0b4;margin-left:auto}
+.tt-cmt p{font-size:13.5px;color:#3d4358}
+.tt-cmt .tt-like{font-size:12px;color:#9aa0b4;margin-top:9px}
+
+/* 资讯 */
+.tt-news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tt-news-item{background:var(--tt-card);border:1px solid var(--tt-line);border-radius:14px;padding:18px 20px;transition:.2s}
+.tt-news-item:hover{transform:translateY(-4px);box-shadow:var(--tt-shadow-h);border-color:transparent}
+.tt-news-item span{font-size:12px;color:var(--tt-main);background:#eef0fb;padding:2px 10px;border-radius:999px}
+.tt-news-item h3{font-size:14.5px;margin:11px 0 8px}
+.tt-news-item p{font-size:13px;color:var(--tt-sub)}
+
+/* 订阅 */
+.tt-subscribe{background:linear-gradient(135deg,#2b3168,#4b3fa8);border-radius:20px;padding:36px;color:#fff;text-align:center}
+.tt-subscribe h2{font-size:22px;margin-bottom:10px}
+.tt-subscribe p{color:#c9cdf0;font-size:14px;margin-bottom:20px}
+.tt-sub-form{display:flex;gap:10px;max-width:440px;margin:0 auto;background:rgba(255,255,255,.14);padding:5px;border-radius:999px}
+.tt-sub-form input{flex:1;background:transparent;border:0;outline:0;color:#fff;padding:9px 18px;font-size:14px}
+.tt-sub-form input::placeholder{color:#b6bbe6}
+.tt-sub-form button{border:0;cursor:pointer;background:var(--tt-acc);color:#2b2b1a;font-weight:700;padding:9px 22px;border-radius:999px;font-size:13.5px}
+
+/* 页脚 */
+.tt-foot{background:#171a2b;color:#9ba1bd;padding:44px 0 26px;margin-top:20px}
+.tt-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px;margin-bottom:30px}
+.tt-foot h4{color:#fff;font-size:14.5px;margin-bottom:12px}
+.tt-foot p,.tt-foot a{font-size:13px;line-height:2}
+.tt-foot a:hover{color:#fff}
+.tt-foot-bot{border-top:1px solid #262a40;padding-top:18px;font-size:12.5px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.tt-foot-logo{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:17px;margin-bottom:12px}
+
+@media(max-width:980px){
+.tt-hero-grid{grid-template-columns:1fr}
+.tt-cats{grid-template-columns:repeat(4,1fr)}
+.tt-cards{grid-template-columns:repeat(2,1fr)}
+.tt-stats{grid-template-columns:repeat(2,1fr)}
+.tt-news{grid-template-columns:repeat(2,1fr)}
+.tt-foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+body{font-size:14.5px}
+.tt-nav-links{display:none}
+.tt-hero h1{font-size:25px}
+.tt-hero{padding:30px 0}
+.tt-cards,.tt-guide,.tt-comments,.tt-news{grid-template-columns:1fr}
+.tt-cats{grid-template-columns:repeat(2,1fr)}
+.tt-article{padding:22px 18px}
+.tt-stats{grid-template-columns:repeat(2,1fr)}
+.tt-subscribe{padding:26px 18px}
+.tt-foot-grid{grid-template-columns:1fr}
+.tt-up-item{grid-template-columns:1fr}
+.tt-up-time{font-size:11.5px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="tt-nav">
+<div class="wrap tt-nav-in">
+<a class="tt-logo" href="/#tt-home"><span class="tt-logo-mark">豚</span>豚豚剧网页版</a>
+<nav class="tt-nav-links">
+<a href="/#tt-hot">热门推荐</a>
+<a href="/#tt-update">最新更新</a>
+<a href="/#tt-cats">题材分类</a>
+<a href="/#tt-deep">深度解析</a>
+<a href="/#tt-guide">体验指南</a>
+<a href="/#tt-faq">常见问题</a>
+<a href="/#tt-news">短剧资讯</a>
+</nav>
+<a class="tt-nav-cta" href="/#tt-hot">立即追剧</a>
+</div>
+</header>
+
+<!-- Banner -->
+<section class="tt-hero" id="tt-home">
+<div class="wrap tt-hero-grid">
+<div>
+<h1><em>豚豚剧网页版</em>在线追短剧，全集免费看不停</h1>
+<p>聚合都市逆袭、古装甜宠、悬疑脑洞等热门微短剧，打开浏览器就能追更，无需下载安装。</p>
+<p>每天更新剧集与榜单，分类清晰、加载轻快，适合碎片时间一口气刷完一整部。</p>
+<form class="tt-search" onsubmit="return false;">
+<input type="text" placeholder="搜索剧名、题材或演员，例如：甜宠 / 逆袭">
+<button type="submit">搜索</button>
+</form>
+<div class="tt-hero-tags">
+<a href="/#tt-cats">都市逆袭</a>
+<a href="/#tt-cats">古装甜宠</a>
+<a href="/#tt-cats">悬疑脑洞</a>
+<a href="/#tt-cats">赘婿战神</a>
+<a href="/#tt-cats">萌宝亲情</a>
+<a href="/#tt-hot">完结全集</a>
+<a href="/#tt-update">今日上新</a>
+<a href="/#tt-rank">热播榜</a>
+</div>
+</div>
+<div class="tt-hero-card">
+<h3>今日热播速览 <span>实时更新</span></h3>
+<div class="tt-mini-row"><span class="tt-mini-idx">1</span>闪婚后，总裁他每天想官宣<em>甜宠</em></div>
+<div class="tt-mini-row"><span class="tt-mini-idx">2</span>重生八零：我靠小卖部逆袭<em>年代</em></div>
+<div class="tt-mini-row"><span class="tt-mini-idx">3</span>离婚后，前夫他跪求复婚<em>都市</em></div>
+<div class="tt-mini-row"><span class="tt-mini-idx">4</span>摄政王的小娇妻又跑了<em>古装</em></div>
+<div class="tt-mini-row"><span class="tt-mini-idx">5</span>深夜来电：第七个房客<em>悬疑</em></div>
+<div class="tt-mini-row"><span class="tt-mini-idx">6</span>我在豪门当保姆的那些年<em>家庭</em></div>
+</div>
+</div>
+</section>
+
+<!-- 分类入口 -->
+<section id="tt-cats">
+<div class="wrap">
+<h2 class="tt-sec-t">短剧题材分类</h2>
+<p class="tt-sec-sub">按题材快速进入，豚豚剧网页版把常看的类型都放在最顺手的位置。</p>
+<div class="tt-cats">
+<a class="tt-cat" href="/#tt-hot"><i>↑</i><b>都市逆袭</b><small>爽点密集</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>♡</i><b>甜宠恋爱</b><small>高糖日常</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>古</i><b>古装权谋</b><small>宅斗宫斗</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>?</i><b>悬疑脑洞</b><small>反转不断</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>家</i><b>家庭亲情</b><small>萌宝催泪</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>战</i><b>战神赘婿</b><small>身份反转</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>穿</i><b>穿越重生</b><small>改命逆袭</small></a>
+<a class="tt-cat" href="/#tt-hot"><i>校</i><b>校园青春</b><small>暗恋心动</small></a>
+</div>
+</div>
+</section>
+
+<!-- 热门推荐 -->
+<section id="tt-hot">
+<div class="wrap">
+<h2 class="tt-sec-t">热门短剧推荐</h2>
+<p class="tt-sec-sub">编辑根据播放热度与讨论度挑选，豚豚剧网页版上口碑与追更数双高的作品都在这。</p>
+<div class="tt-cards">
+
+<div class="tt-card">
+<div class="tt-cover tt-c1"><span>闪婚后，总裁他每天想官宣</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>闪婚后，总裁他每天想官宣</h3>
+<div class="tt-tags"><i>甜宠</i><i class="hot">热播</i><i>先婚后爱</i></div>
+<p>契约闪婚开局，男主从冷面总裁变成黏人精，每集都有官宣名场面，糖分密度极高。</p>
+<div class="tt-meta"><span>评分 9.1</span><span>共 82 集</span><span>热度 98万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c2"><span>重生八零：我靠小卖部逆袭</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>重生八零：我靠小卖部逆袭</h3>
+<div class="tt-tags"><i>年代</i><i class="hot">爽剧</i><i>重生</i></div>
+<p>带着前世记忆回到八零年代，从一间小卖部做到连锁商超，节奏快、打脸利落不拖沓。</p>
+<div class="tt-meta"><span>评分 8.9</span><span>共 76 集</span><span>热度 91万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c3"><span>离婚后，前夫他跪求复婚</span><b class="tt-badge">更新中</b></div>
+<div class="tt-card-body">
+<h3>离婚后，前夫他跪求复婚</h3>
+<div class="tt-tags"><i>都市</i><i>追妻</i><i class="hot">反转</i></div>
+<p>女主甩掉隐忍人设专心搞事业，前夫哥从自信到破防的过程是全剧最大的爽点来源。</p>
+<div class="tt-meta"><span>评分 8.8</span><span>更新至 48 集</span><span>热度 87万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c4"><span>摄政王的小娇妻又跑了</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>摄政王的小娇妻又跑了</h3>
+<div class="tt-tags"><i>古装</i><i>甜虐</i><i>逃妻</i></div>
+<p>古装甜宠里比较少见的双强设定，女主能打能算，男主追妻追到朝堂上，笑点与心动并存。</p>
+<div class="tt-meta"><span>评分 9.0</span><span>共 68 集</span><span>热度 85万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c5"><span>深夜来电：第七个房客</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>深夜来电：第七个房客</h3>
+<div class="tt-tags"><i>悬疑</i><i class="hot">烧脑</i><i>短平快</i></div>
+<p>每集结尾都留一个钩子，六集之内完成三次反转，适合喜欢边看边推理的观众。</p>
+<div class="tt-meta"><span>评分 8.7</span><span>共 40 集</span><span>热度 79万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c6"><span>我在豪门当保姆的那些年</span><b class="tt-badge">更新中</b></div>
+<div class="tt-card-body">
+<h3>我在豪门当保姆的那些年</h3>
+<div class="tt-tags"><i>家庭</i><i>爽剧</i><i>逆袭</i></div>
+<p>以保姆视角切入豪门内斗，围观式叙事新鲜，女主一路升级打怪，情绪价值给得很足。</p>
+<div class="tt-meta"><span>评分 8.6</span><span>更新至 55 集</span><span>热度 74万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c7"><span>战神归来，我有九个师姐</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>战神归来，我有九个师姐</h3>
+<div class="tt-tags"><i>战神</i><i>爽剧</i><i>身份</i></div>
+<p>典型男频爽剧结构，身份揭晓的节拍踩得准，每一集都有明确的打脸目标对象。</p>
+<div class="tt-meta"><span>评分 8.4</span><span>共 90 集</span><span>热度 70万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c8"><span>穿成炮灰后我全家都火了</span><b class="tt-badge">更新中</b></div>
+<div class="tt-card-body">
+<h3>穿成炮灰后我全家都火了</h3>
+<div class="tt-tags"><i>穿书</i><i>搞笑</i><i class="hot">群像</i></div>
+<p>穿书设定配上全家群像，笑点密集，配角也各有记忆点，追起来轻松不费脑。</p>
+<div class="tt-meta"><span>评分 8.5</span><span>更新至 32 集</span><span>热度 66万</span></div>
+</div>
+</div>
+
+<div class="tt-card">
+<div class="tt-cover tt-c9"><span>暗恋成真：竹马请签收</span><b class="tt-badge">完结</b></div>
+<div class="tt-card-body">
+<h3>暗恋成真：竹马请签收</h3>
+<div class="tt-tags"><i>校园</i><i>甜宠</i><i>青春</i></div>
+<p>从校服到婚纱的完整时间线，暗恋细节拍得细腻，适合喜欢慢热治愈系的观众。</p>
+<div class="tt-meta"><span>评分 8.9</span><span>共 60 集</span><span>热度 63万</span></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 最新更新 -->
+<section id="tt-update">
+<div class="wrap">
+<h2 class="tt-sec-t">最新更新动态</h2>
+<p class="tt-sec-sub">以下为 2026 年 11 月 7 日前后豚豚剧网页版的剧集更新与上线情况。</p>
+<div class="tt-updates">
+<div class="tt-up-item"><div><h4><b>更新</b>闪婚后，总裁他每天想官宣</h4><p>番外篇第 3 集上线，补完婚礼当天的隐藏视角。</p></div><span class="tt-up-time">2026-11-07 09:20</span></div>
+<div class="tt-up-item"><div><h4><b>上新</b>重启人生：我在顶楼开咖啡馆</h4><p>都市治愈新剧首播，一次放出前 12 集。</p></div><span class="tt-up-time">2026-11-07 08:45</span></div>
+<div class="tt-up-item"><div><h4><b>更新</b>离婚后，前夫他跪求复婚</h4><p>第 48 集更新，女主创业线迎来关键转折。</p></div><span class="tt-up-time">2026-11-06 21:10</span></div>
+<div class="tt-up-item"><div><h4><b>完结</b>深夜来电：第七个房客</h4><p>全 40 集完结，结局反转引发大量讨论。</p></div><span class="tt-up-time">2026-11-06 18:30</span></div>
+<div class="tt-up-item"><div><h4><b>更新</b>我在豪门当保姆的那些年</h4><p>更新至第 55 集，豪门家产线进入白热化。</p></div><span class="tt-up-time">2026-11-06 12:05</span></div>
+<div class="tt-up-item"><div><h4><b>上新</b>我的师父是扫地僧</h4><p>男频爽剧新作上线，首更 20 集。</p></div><span class="tt-up-time">2026-11-05 19:40</span></div>
+<div class="tt-up-item"><div><h4><b>更新</b>穿成炮灰后我全家都火了</h4><p>更新至第 32 集，主角团正式进入综艺副本。</p></div><span class="tt-up-time">2026-11-05 15:20</span></div>
+<div class="tt-up-item"><div><h4><b>预告</b>摄政王的小娇妻又跑了</h4><p>第二季官宣，预计 11 月下旬上线。</p></div><span class="tt-up-time">2026-11-05 10:15</span></div>
+<div class="tt-up-item"><div><h4><b>更新</b>暗恋成真：竹马请签收</h4><p>补更 3 集番外，补完婚后日常线。</p></div><span class="tt-up-time">2026-11-04 20:00</span></div>
+<div class="tt-up-item"><div><h4><b>上新</b>退婚后我成了首富</h4><p>古装经商题材新剧上线，首更 16 集。</p></div><span class="tt-up-time">2026-11-04 11:35</span></div>
+</div>
+</div>
+</section>
+
+<!-- 数据看板 -->
+<section id="tt-rank">
+<div class="wrap">
+<h2 class="tt-sec-t">平台数据速览</h2>
+<p class="tt-sec-sub">数据为站内统计口径，仅用于反映内容热度分布，帮助选择入口。</p>
+<div class="tt-stats">
+<div class="tt-stat"><b>3200+</b><span>在库短剧数量</span></div>
+<div class="tt-stat"><b>18 类</b><span>题材细分标签</span></div>
+<div class="tt-stat"><b>日更 60+</b><span>平均每日更新集数</span></div>
+<div class="tt-stat"><b>9.1 分</b><span>当前最高口碑作品</span></div>
+</div>
+</div>
+</section>
+
+<!-- 深度解析 -->
+<section id="tt-deep">
+<div class="wrap">
+<h2 class="tt-sec-t">豚豚剧网页版深度解析</h2>
+<p class="tt-sec-sub">从题材特点、内容节奏到适合人群，把这类短剧资源平台讲清楚。</p>
+<div class="tt-article">
+<h3>一、短剧为什么在网页端反而更好追</h3>
+<p>短剧的核心消费特征是“单集短、密度高、钩子多”，一集往往只有一两分钟，观众很容易在碎片时间里连续刷完十几集。豚豚剧网页版这种浏览器直接打开的形式，恰好对上这种节奏：不用下载客户端、不用等待安装包更新，点开链接就能接着上次的进度往下看。对通勤路上、午休间隙、睡前碎片时间的观众来说，这种低门槛入口比装一个 App 更符合“想到就看”的需求。</p>
+<p>另一方面，网页端的页面结构天然适合做“分类 + 榜单 + 更新列表”的组合。短剧观众往往不是冲着某一部剧来的，而是先看榜单、再挑题材、最后才点进具体作品。豚豚剧网页版把这几个入口放在同一屏的可视范围内，减少来回跳转，追更体验更连贯。</p>
+<h3>二、题材结构：爽点密度决定观看体验</h3>
+<p>目前平台上讨论度较高的几类，基本覆盖了短剧的主流爽点模型。都市逆袭类靠身份反转与打脸节奏推进，几乎每三到五集就会安排一次情绪爆发点；甜宠恋爱类靠 CP 感与名场面堆糖，靠“什么时候官宣”“什么时候心动”撑住追更动力；古装权谋类则更依赖宅斗、宫斗的智斗结构，信息量更大，适合愿意稍微动脑的观众。</p>
+<p>悬疑脑洞是近两年增长明显的一支，它把短剧的“每集一个钩子”发挥到极致，往往在结尾留一个强反转，逼迫观众点下一集。豚豚剧网页版的分类标签把这类作品单独拎出来，对喜欢推理、喜欢边看边猜的观众更友好。</p>
+<div class="tt-quote">选剧小建议：想放松就看甜宠与搞笑，想解压就看逆袭爽剧，想动脑就看悬疑脑洞。三类交替着看，不容易审美疲劳。</div>
+<h3>三、人物与表演：短剧的辨识度从哪来</h3>
+<p>短剧受限于时长，人物塑造往往靠“标签 + 名场面”快速建立。男女主的性格设定通常在前三集就交代清楚，之后靠一个个具体事件强化记忆点。豚豚剧网页版在作品卡片上标注了题材与看点标签，其实就是在帮观众快速判断“这部剧的主角类型是不是我的菜”。</p>
+<p>值得留意的是，短剧演员的表演节奏和长剧差别很大，台词更短、情绪更外放、反应更直接。第一次接触短剧的观众可能会觉得“演得有点满”，但这恰恰是短剧在极短时间内传递情绪的方式。看多几部之后，反而会觉得这种直给的表演很解压。</p>
+<h3>四、节奏与消费体验：为什么容易一口气刷完</h3>
+<p>短剧的剪辑逻辑接近信息流：每集开头三秒抛冲突，中段推进，结尾留悬念。这种结构在网页端连续播放时效果最明显，因为下一集几乎是零等待加载。豚豚剧网页版把剧集列表做成竖向排列，滑到底就能接着看，减少了“找下一集”的操作成本，这也是很多人反映“一刷就停不下来”的原因。</p>
+<p>不过也要提醒，短剧的强钩子设计容易让人连续观看时间过长。建议给自己设一个“看几集就停”的心理预期，尤其是睡前刷剧，很容易一集接一集到凌晨。</p>
+<h3>五、适合人群与同类比较</h3>
+<p>豚豚剧网页版更适合三类观众：一是时间碎片化、希望随时开始随时暂停的上班族；二是不想装太多 App、偏好浏览器轻量访问的用户；三是刚开始接触短剧、需要榜单和分类来降低选择成本的新观众。相比之下，重度短剧用户可能更在意更新速度和剧库广度，这时可以结合站内的更新列表与资讯区一起使用。</p>
+<p>和长剧相比，短剧不追求世界观铺陈，而是把情绪浓度拉到最高；和短视频相比，短剧又有完整的叙事线和人物弧光。理解这个定位，就能明白搜索“豚豚剧网页版”的观众，大多是想找一个能稳定追更、分类清晰、打开就能看的短剧入口。</p>
+<h3>六、搜索这个词的人通常在找什么</h3>
+<p>从搜索意图看，用户最关心的无非三件事：能不能免费看、更新快不快、分类全不全。豚豚剧网页版围绕这三点组织页面结构，把热门推荐、最新更新、题材分类放在靠前位置，正是为了缩短“从搜索到开始看”的路径。对内容站来说，这种结构也更容易被搜索引擎理解页面主题。</p>
+</div>
+</div>
+</section>
+
+<!-- 体验指南 -->
+<section id="tt-guide">
+<div class="wrap">
+<h2 class="tt-sec-t">网页版体验指南</h2>
+<p class="tt-sec-sub">把入口用顺，追剧效率能提升不少。</p>
+<div class="tt-guide">
+<div class="tt-guide-item"><h3><i>1</i>页面结构清晰</h3><p>导航、榜单、更新、分类依次排布，第一次进来也能快速找到想看的位置，不用在多个页面之间反复跳转。</p></div>
+<div class="tt-guide-item"><h3><i>2</i>分类筛选方便</h3><p>按题材、按更新状态、按热度都能筛，找剧时先定类型再看榜单，比盲目翻列表省时间。</p></div>
+<div class="tt-guide-item"><h3><i>3</i>移动端友好</h3><p>手机浏览器打开自动适配，卡片与列表在窄屏下改为单列，滑动阅读不费眼。</p></div>
+<div class="tt-guide-item"><h3><i>4</i>适合追更收藏</h3><p>更新列表按时间倒序排列，追更中的剧集能第一时间看到新集数，建议把常看的加入收藏。</p></div>
+<div class="tt-guide-item"><h3><i>5</i>相关推荐扩展浏览</h3><p>每部作品下方都有同题材推荐，看完一部可以顺着标签继续找，不容易陷入“看完不知道看啥”的状态。</p></div>
+<div class="tt-guide-item"><h3><i>6</i>轻量不占空间</h3><p>网页版不占用本地存储，换设备登录也能继续浏览，适合在多台设备之间切换使用。</p></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="tt-faq">
+<div class="wrap">
+<h2 class="tt-sec-t">常见问题解答</h2>
+<p class="tt-sec-sub">关于豚豚剧网页版，观众问得最多的几个问题。</p>
+<div class="tt-faq">
+<details open><summary>豚豚剧网页版需要下载 App 吗？</summary><p>不需要。豚豚剧网页版是浏览器直接访问的形式，打开链接即可浏览剧集列表和分类内容，省去了下载安装的步骤。对存储空间紧张或者不想装太多应用的用户来说更方便，换设备时也不用重新安装。</p></details>
+<details><summary>第一次看短剧，应该从哪类题材入手？</summary><p>建议从甜宠恋爱或都市逆袭入手，这两类剧情结构相对简单、爽点直给，容易建立对短剧节奏的适应。看完两三部之后再尝试悬疑脑洞或古装权谋，信息量更大，需要更专注地看，体验会更好。</p></details>
+<details><summary>更新中的剧和完结剧怎么选？</summary><p>想一口气看完就选完结剧，追更体验更完整；想保持每天有新鲜内容，就挑一两部更新中的剧跟着看。豚豚剧网页版在作品卡片上标注了更新状态，按标签筛选即可，不用逐部点进去确认。</p></details>
+<details><summary>网页版在手机上看着方便吗？</summary><p>页面做了响应式适配，手机浏览器打开后卡片会变成单列、导航会收拢，滑动即可切换板块。建议横屏或竖屏按个人习惯选择，通勤和睡前刷剧都比较顺手。</p></details>
+<details><summary>为什么短剧看起来这么容易停不下来？</summary><p>短剧普遍采用“开头抛冲突、结尾留钩子”的结构，单集时长又短，下一集几乎零等待，连续观看的心理门槛很低。加上平台把下一集入口做得很顺，所以很容易一口气刷很多集。建议提前设定观看集数上限，避免影响休息。</p></details>
+<details><summary>在哪里能看到最新的更新和上线消息？</summary><p>页面中的最新更新板块会按时间倒序展示新集上线、新剧首播和完结信息，短剧资讯区则会补充预告与动态。关注这两个板块，基本能掌握近期值得追的作品和更新时间。</p></details>
+</div>
+</div>
+</section>
+
+<!-- 用户评论 -->
+<section id="tt-comments">
+<div class="wrap">
+<h2 class="tt-sec-t">观众怎么说</h2>
+<p class="tt-sec-sub">来自近 30 天内站内观众的追剧讨论，观点不代表本站立场。</p>
+<div class="tt-comments">
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#3a4bd8">柠</span><b>柠檬不酸</b><span>11-06</span></div><p>网页版追短剧是真的方便，午休时间刷个十几集完全没压力，不用等下载更新这点很加分。</p><div class="tt-like">👍 128</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#e64980">晚</span><b>晚风有信</b><span>11-06</span></div><p>《闪婚后，总裁他每天想官宣》番外居然还有婚礼隐藏视角，这波补更我认了，甜度直接拉满。</p><div class="tt-like">👍 96</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#12b886">路</span><b>路过的猫</b><span>11-05</span></div><p>分类做得还行，但希望能加个“已看完”标记，不然看完的剧混在列表里容易点重复。</p><div class="tt-like">👍 61</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#f76707">半</span><b>半糖去冰</b><span>11-05</span></div><p>悬疑那部《深夜来电》结局反转我确实没猜到，短剧能把钩子写这么紧不容易，推荐给喜欢动脑的朋友。</p><div class="tt-like">👍 143</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#5f3dc4">大</span><b>大橘为重</b><span>11-04</span></div><p>男频爽剧看多了有点套路化，战神赘婿那一类基本能猜到下一步，希望多上点题材新鲜的。</p><div class="tt-like">👍 54</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#1c7ed6">海</span><b>海盐气泡</b><span>11-04</span></div><p>手机上刷体验不错，就是长列表滑久了有点累，如果能记住上次看到的位置就更好了。</p><div class="tt-like">👍 38</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#e8590c">小</span><b>小满不吃香菜</b><span>11-03</span></div><p>《我在豪门当保姆的那些年》视角挺新，保姆围观豪门的叙事比纯霸总有意思多了。</p><div class="tt-like">👍 77</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#0ca678">不</span><b>不熬夜星人</b><span>11-03</span></div><p>说是这么说，但一集一两分钟真的太容易停不下来了，昨天说好看三集，结果看到凌晨。</p><div class="tt-like">👍 112</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#7048e8">阿</span><b>阿桉</b><span>11-02</span></div><p>古装甜宠那部双强设定我喜欢，女主不傻白甜，这点在短剧里挺难得的。</p><div class="tt-like">👍 89</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#c2255c">奶</span><b>奶盖三分甜</b><span>11-02</span></div><p>希望更新列表能按题材筛一下，我只想追甜宠，每次都要在一堆里翻。</p><div class="tt-like">👍 42</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#1098ad">清</span><b>清风徐来</b><span>11-01</span></div><p>年代重生那部节奏是真快，小卖部一步步做大的过程看着挺解压的，适合下班路上看。</p><div class="tt-like">👍 66</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#9c36b5">南</span><b>南瓜粥</b><span>10-31</span></div><p>整体不错，就是部分剧的简介写得太笼统了，希望卡片上能多写几句看点。</p><div class="tt-like">👍 31</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#3a4bd8">星</span><b>星河入梦</b><span>10-30</span></div><p>从长剧转过来看短剧，一开始觉得演得有点满，看习惯了反而觉得这种直给的情绪挺爽的。</p><div class="tt-like">👍 58</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#12b886">追</span><b>追更冠军</b><span>10-29</span></div><p>《穿成炮灰后我全家都火了》群像写得挺有意思，配角也都有记忆点，推荐。</p><div class="tt-like">👍 47</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#f76707">麦</span><b>麦麦麦</b><span>10-28</span></div><p>网页版不占内存这点很戳我，平板和电脑换着看都不用重新装。</p><div class="tt-like">👍 53</div></div>
+<div class="tt-cmt"><div class="tt-cmt-head"><span class="tt-ava" style="background:#5f3dc4">柚</span><b>柚子茶</b><span>10-27</span></div><p>《离婚后，前夫他跪求复婚》前夫哥破防那段我反复看了三遍，爽。</p><div class="tt-like">👍 71</div></div>
+</div>
+</div>
+</section>
+
+<!-- 资讯 -->
+<section id="tt-news">
+<div class="wrap">
+<h2 class="tt-sec-t">短剧相关资讯</h2>
+<p class="tt-sec-sub">行业动态、题材趋势与上新预告，帮助判断近期值得关注的作品方向。</p>
+<div class="tt-news">
+<div class="tt-news-item"><span>行业观察</span><h3>微短剧进入精品化阶段，单集时长与制作水准同步提升</h3><p>2026 年下半年起，越来越多短剧在服化道与剧本打磨上加大投入，短剧与长剧的边界正在变得模糊。</p></div>
+<div class="tt-news-item"><span>题材趋势</span><h3>悬疑脑洞类短剧热度上升，强反转结构成新宠</h3><p>相比传统爽剧，悬疑短剧更依赖剧本结构，观众追更时的讨论度也更高，评论区推理氛围明显。</p></div>
+<div class="tt-news-item"><span>上新预告</span><h3>《摄政王的小娇妻又跑了》第二季定档，11 月下旬上线</h3><p>第一季完结后口碑稳定，第二季将补完朝堂线与女主身世埋伏，是近期古装题材里关注度较高的一部。</p></div>
+<div class="tt-news-item"><span>消费观察</span><h3>碎片时间追剧成主流，网页端入口使用率提升</h3><p>越来越多观众倾向于在浏览器中直接观看，省去下载与更新的步骤，轻量访问成为短剧消费的新习惯。</p></div>
+<div class="tt-news-item"><span>编辑推荐</span><h3>本周值得一看的五部短剧：甜宠、悬疑、年代各占一席</h3><p>结合播放热度与讨论度综合挑选，覆盖不同题材偏好，适合刚开始接触短剧的观众按图索骥。</p></div>
+<div class="tt-news-item"><span>平台动态</span><h3>豚豚剧网页版优化分类标签，新增题材筛选维度</h3><p>本次调整让分类入口更贴近实际观看习惯，找剧时可以先定类型，再看榜单，减少无效翻找。</p></div>
+</div>
+</div>
+</section>
+
+<!-- 订阅 -->
+<section id="tt-sub">
+<div class="wrap">
+<div class="tt-subscribe">
+<h2>订阅更新提醒</h2>
+<p>留下邮箱，第一时间收到豚豚剧网页版的新剧上线与追更提醒。</p>
+<form class="tt-sub-form" onsubmit="return false;">
+<input type="email" placeholder="请输入你的邮箱">
+<button type="submit">订阅</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 页脚 -->
+<footer class="tt-foot">
+<div class="wrap">
+<div class="tt-foot-grid">
+<div>
+<div class="tt-foot-logo"><span class="tt-logo-mark">豚</span>豚豚剧网页版</div>
+<p>专注短剧在线观看与追更的内容入口，聚合热门微短剧、题材分类与更新动态，打开浏览器即可浏览。</p>
+</div>
+<div>
+<h4>内容导航</h4>
+<p><a href="/#tt-hot">热门推荐</a></p>
+<p><a href="/#tt-update">最新更新</a></p>
+<p><a href="/#tt-cats">题材分类</a></p>
+<p><a href="/#tt-rank">数据速览</a></p>
+</div>
+<div>
+<h4>帮助与说明</h4>
+<p><a href="/#tt-faq">常见问题</a></p>
+<p><a href="/#tt-guide">体验指南</a></p>
+<p><a href="/#tt-news">短剧资讯</a></p>
+<p><a href="/#tt-comments">观众评论</a></p>
+</div>
+<div>
+<h4>友情链接</h4>
+<p>短剧资源导航（占位）</p>
+<p>影视内容观察（占位）</p>
+<p>追剧日历工具（占位）</p>
+<p>内容合规说明（占位）</p>
+</div>
+</div>
+<div class="tt-foot-bot">
+<span>© 2026 豚豚剧网页版 内容展示页 · 本站为内容介绍与导航页面</span>
+<span>免责声明：页面内容仅供信息参考，剧集信息以实际平台为准，站内不存储任何视频资源。</span>
+</div>
+</div>
+</footer>
+
+</body>
+  </html>
