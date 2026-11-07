@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>91次元-动漫二次元内容社区_新番推荐_深度解析_同好讨论</title>
+  <meta name="description" content="91次元是面向动漫爱好者的二次元内容社区，提供新番推荐、深度解析、同好讨论与追番指南。聚合动画、漫画、轻小说与同人创作，帮助用户发现好作品、理解剧情脉络，并参与社区互动。">
+  <meta name="keywords" content="91次元,动漫社区,新番推荐,二次元内容,追番指南,同好讨论">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <style>
+    :root {
+      --bg: #f9f7f4;
+      --surface: #ffffff;
+      --text: #1e1b1a;
+      --text-secondary: #5e5a57;
+      --accent: #d94f4f;
+      --accent-soft: #fce9e9;
+      --border-light: #ece8e3;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+      --shadow-hover: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --max-width: 1200px;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 导航 */
+    .top-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+    .logo-badge span {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .search-mini {
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: 40px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    /* 移动端折叠 */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .search-mini {
+        display: none;
+      }
+      .nav-inner {
+        height: 60px;
+      }
+    }
+    /* 通用section */
+    .section {
+      padding: 56px 0;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border-light);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 40px;
+      font-weight: 500;
+      margin-right: 6px;
+      margin-bottom: 8px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 6px 0 8px;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: #8f8a86;
+      display: flex;
+      gap: 12px;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag-cloud span {
+      background: #f0eeeb;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    /* 榜单列表 */
+    .rank-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      padding: 14px 20px;
+      border-radius: 60px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+    .rank-num {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--accent);
+      min-width: 28px;
+    }
+    .rank-info {
+      flex: 1;
+    }
+    .rank-name {
+      font-weight: 600;
+    }
+    .rank-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    /* FAQ 手风琴样式（模拟） */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-light);
+      padding: 20px 24px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 600;
+      display: flex;
+      gap: 12px;
+    }
+    .faq-q::before {
+      content: "❓";
+      font-size: 1rem;
+    }
+    .faq-a {
+      margin-top: 10px;
+      padding-left: 28px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    /* 评论样式 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .comment-date {
+      font-size: 0.7rem;
+      color: #a09b97;
+    }
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    /* 资讯列表 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .news-item {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid var(--border-light);
+    }
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .news-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .news-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    /* 页脚 */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border-light);
+      padding: 40px 0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .disclaimer {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #a09b97;
+      border-top: 1px solid var(--border-light);
+      padding-top: 24px;
+    }
+    /* banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #fff5f0 0%, #fde7e7 100%);
+      border-radius: var(--radius-md);
+      padding: 48px 40px;
+      margin: 32px 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1 1 60%;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    .hero-search {
+      display: flex;
+      background: white;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      max-width: 420px;
+      border: 1px solid var(--border-light);
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-search input {
+      border: none;
+      background: transparent;
+      flex: 1;
+      padding: 10px 0;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .hero-search button {
+      background: var(--accent);
+      border: none;
+      border-radius: 40px;
+      padding: 10px 22px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: default;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .hero-buttons a {
+      background: white;
+      border: 1px solid var(--border-light);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .hero-buttons a:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .hero-banner {
+        padding: 32px 24px;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+    /* 内容简介区块 */
+    .intro-box {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      border: 1px solid var(--border-light);
+      line-height: 1.8;
+    }
+    .intro-box p {
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+    }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+    /* 分类入口小块 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 16px;
+    }
+    .category-item {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 40px;
+      padding: 12px 10px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.15s;
+    }
+    .category-item:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航区域 -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="/#hero" class="logo-badge">
+        91次元 <span>社区</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#hot">热门推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">同好评论</a>
+        <a href="/#news">资讯</a>
+      </nav>
+      <div class="search-mini">
+        🔍 搜索动漫…
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 首屏 Banner 区域 -->
+    <section id="hero" class="hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">91次元 · 动漫同好聚集地</h1>
+        <p class="hero-desc">发现新番、重温经典、解析剧情、参与讨论。91次元为二次元爱好者提供深度的动画推荐与社区交流，让每一次追番都有迹可循。</p>
+        <div class="hero-search">
+          <input type="text" placeholder="搜索番剧、角色或关键词…" aria-label="搜索">
+          <button>搜索</button>
+        </div>
+        <div class="hero-buttons">
+          <a href="/#hot">🔥 热门推荐</a>
+          <a href="/#latest">📅 最新更新</a>
+          <a href="/#analysis">📖 深度解析</a>
+          <a href="/#category">🗂️ 分类</a>
+          <a href="/#faq">❓ 常见问题</a>
+          <a href="/#comments">💬 同好评论</a>
+          <a href="/#news">📰 资讯</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 内容简介 / 平台介绍 -->
+    <section id="intro" class="section" style="padding-top: 24px;">
+      <div class="intro-box">
+        <p>91次元是一个专注于动漫与二次元文化的内容社区。无论你是刚入坑的新人，还是追番多年的老宅，这里都能帮你找到感兴趣的作品。我们聚合动画、漫画、轻小说及同人创作资讯，提供编辑精选推荐、深度剧情解析和角色分析，同时搭建同好讨论空间，让观看体验不再孤单。</p>
+        <p>本页围绕“91次元”这一关键词，整理近期热门番剧、人气续作、新番动态以及社区口碑内容。你可以通过分类快速筛选，也可以阅读深度解析文章，了解作品背后的制作故事与叙事亮点。所有推荐均基于社区讨论热度和编辑审阅，适合用来规划追番列表或挖掘冷门佳作。</p>
+        <p>如果你经常为“下一部看什么”而犹豫，或者想深入理解某部作品的主题与隐喻，91次元的专题内容能提供有效的参考。页面同时适合移动端浏览，随时打开即可浏览最新更新与热门评论。</p>
+      </div>
+    </section>
+
+    <!-- 热门内容推荐 -->
+    <section id="hot" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🔥 热门推荐</h2>
+        <span class="section-sub">近期社区讨论度最高的作品</span>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-tag">奇幻</span><span class="card-tag">冒险</span>
+          <div class="card-title">星海旅人</div>
+          <div class="card-desc">少年意外获得星图碎片，踏上寻找失落文明的旅程。画面精美，配乐宏大，第8集反转引发热议。</div>
+          <div class="card-meta"><span>⭐ 9.2</span><span>更新至第10话</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">恋爱</span><span class="card-tag">校园</span>
+          <div class="card-title">放学后的心动</div>
+          <div class="card-desc">青梅竹马与转学生的微妙三角关系，细腻的心理描写让观众直呼真实。本周更新第7集。</div>
+          <div class="card-meta"><span>⭐ 8.9</span><span>更新至第7话</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">战斗</span><span class="card-tag">热血</span>
+          <div class="card-title">刃之继承者</div>
+          <div class="card-desc">刀剑与异能交织的激战，作画回投入极高。主角成长线清晰，配角塑造丰满。</div>
+          <div class="card-meta"><span>⭐ 9.0</span><span>更新至第12话</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">悬疑</span><span class="card-tag">推理</span>
+          <div class="card-title">记忆碎片</div>
+          <div class="card-desc">时间循环题材，每集信息量巨大，社区推理帖热度飙升。适合喜欢烧脑剧情的观众。</div>
+          <div class="card-meta"><span>⭐ 8.8</span><span>更新至第9话</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">日常</span><span class="card-tag">治愈</span>
+          <div class="card-title">猫咪与咖啡</div>
+          <div class="card-desc">温馨的都市治愈小品，每集一个独立小故事。适合放松时观看，口碑稳定上升。</div>
+          <div class="card-meta"><span>⭐ 8.5</span><span>全12话完结</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">科幻</span><span class="card-tag">机战</span>
+          <div class="card-title">银河边境</div>
+          <div class="card-desc">硬核机甲战斗与政治博弈并重，设定严谨。第6集大规模战役作画获好评。</div>
+          <div class="card-meta"><span>⭐ 8.7</span><span>更新至第8话</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 / 热播动态 -->
+    <section id="latest" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📅 最新更新</h2>
+        <span class="section-sub">2026年11月7日 更新动态</span>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num">1</span><div class="rank-info"><div class="rank-name">星海旅人</div><div class="rank-sub">第10话「星图的指引」已上线</div></div></div>
+        <div class="rank-item"><span class="rank-num">2</span><div class="rank-info"><div class="rank-name">刃之继承者</div><div class="rank-sub">第12话「最终之刃」更新，本季完结</div></div></div>
+        <div class="rank-item"><span class="rank-num">3</span><div class="rank-info"><div class="rank-name">记忆碎片</div><div class="rank-sub">第9话「循环的出口」上线，社区讨论激增</div></div></div>
+        <div class="rank-item"><span class="rank-num">4</span><div class="rank-info"><div class="rank-name">放学后的心动</div><div class="rank-sub">第7话「夏日的距离」更新</div></div></div>
+        <div class="rank-item"><span class="rank-num">5</span><div class="rank-info"><div class="rank-name">银河边境</div><div class="rank-sub">第8话「星云伏击」已上线</div></div></div>
+        <div class="rank-item"><span class="rank-num">6</span><div class="rank-info"><div class="rank-name">猫咪与咖啡</div><div class="rank-sub">第12话「冬日的约定」完结撒花</div></div></div>
+        <div class="rank-item"><span class="rank-num">7</span><div class="rank-info"><div class="rank-name">异世界食堂2</div><div class="rank-sub">第5话「炸虾与异国酱汁」更新</div></div></div>
+        <div class="rank-item"><span class="rank-num">8</span><div class="rank-info"><div class="rank-name">剑与魔法学院</div><div class="rank-sub">第9话「魔法竞技祭」更新</div></div></div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="category" class="section">
+      <div class="section-header">
+        <h2 class="section-title">🗂️ 题材分类</h2>
+        <span class="section-sub">按兴趣快速筛选</span>
+      </div>
+      <div class="category-grid">
+        <div class="category-item">热血</div>
+        <div class="category-item">恋爱</div>
+        <div class="category-item">奇幻</div>
+        <div class="category-item">科幻</div>
+        <div class="category-item">日常</div>
+        <div class="category-item">悬疑</div>
+        <div class="category-item">治愈</div>
+        <div class="category-item">机战</div>
+        <div class="category-item">运动</div>
+        <div class="category-item">音乐</div>
+      </div>
+    </section>
+
+    <!-- 深度解析正文 -->
+    <section id="analysis" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📖 深度解析：91次元视角下的本季新番</h2>
+      </div>
+      <div class="intro-box" style="padding: 32px;">
+        <p>在2026年秋季新番中，91次元社区讨论呈现出明显的类型融合趋势。过去“奇幻+冒险”的简单组合已经难以满足观众，制作方开始将悬疑、心理、甚至社会派元素嵌入传统框架。例如《记忆碎片》用时间循环包裹人物成长，每一集都抛出新的谜团，同时逐步揭示角色的情感创伤，这种叙事策略在社区内引发了大量逐帧分析帖。从91次元编辑的观察来看，观众不仅关心剧情走向，更热衷于挖掘伏笔与隐喻，这意味着内容消费正在从“看故事”转向“解故事”。</p>
+        <p>人物塑造方面，本季作品普遍注重配角的立体度。《刃之继承者》中反派角色的背景故事用了整整一集来铺垫，使得最终决战更具情感冲击力。这种处理方式在91次元的评论区获得了较高评价，不少用户表示“配角不工具人，打斗才有分量”。同时，主角的成长弧线不再依赖单一的热血爆发，而是通过挫折与反思逐步推进，更贴近真实的情感逻辑。</p>
+        <p>视听表现上，手绘作画与CG的结合愈发成熟。《银河边境》的机甲战斗场景大量采用3D Layout辅助，但关键帧仍由原画师手绘完成，兼顾了流畅度与笔触质感。配乐方面，本季多部作品邀请到知名作曲家参与，管弦乐与电子乐混搭成为常见配置。91次元社区中有用户专门整理了“本季最佳OST”歌单，侧面反映出音乐对作品氛围的加成作用。</p>
+        <p>对于想通过91次元寻找下一部番剧的观众，建议先根据题材分类缩小范围，再结合热门推荐中的评分与更新状态进行筛选。如果你偏好深度剧情，可以优先关注《记忆碎片》和《星海旅人》；如果更看重轻松体验，《猫咪与咖啡》和《放学后的心动》会更合适。91次元的深度解析栏目会持续跟进重点作品的叙事发展，帮助读者理解作品背后的创作意图，让追番不再只是被动接受，而是一场主动的审美参与。</p>
+      </div>
+    </section>
+
+    <!-- FAQ 常见问题（手风琴样式） -->
+    <section id="faq" class="section">
+      <div class="section-header">
+        <h2 class="section-title">❓ 常见问题</h2>
+        <span class="section-sub">关于91次元与追番的答疑</span>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">91次元主要提供什么内容？</div>
+          <div class="faq-a">91次元是动漫爱好者社区，提供新番推荐、深度解析、分类索引、社区评论和资讯汇总。你可以在这里找到本季热门作品、编辑精选点评，以及同好对剧情的讨论。页面内容涵盖动画、漫画、轻小说等二次元相关领域，适合用来规划追番或挖掘冷门佳作。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何利用91次元找到适合自己的番剧？</div>
+          <div class="faq-a">建议先浏览“热门推荐”了解当下社区讨论度高的作品，再通过“题材分类”按兴趣筛选。如果偏好深度剧情，可以阅读“深度解析”部分，了解作品风格与叙事特点。同时关注“最新更新”模块，查看近期上线的剧集，结合简介判断是否符合口味。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">91次元的深度解析有什么特点？</div>
+          <div class="faq-a">深度解析由编辑根据社区讨论和作品实际表现撰写，侧重叙事结构、人物弧光、视听语言等维度。不单纯复述剧情，而是提供分析视角，帮助读者理解作品的设计意图。每篇解析都基于已播出内容，避免超前剧透，适合在观看后阅读。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">本季有哪些值得关注的续作？</div>
+          <div class="faq-a">2026年秋季续作中，《异世界食堂2》延续了单元剧治愈风格，《剑与魔法学院》第二季保持了轻快的节奏。此外《银河边境》虽非续作，但凭借扎实的机战设定吸引了大量关注。建议关注91次元的最新更新模块，及时获取续作播出信息。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">91次元的评论和讨论氛围如何？</div>
+          <div class="faq-a">社区评论以作品讨论为主，用户会分享观后感、角色分析、剧情推测。多数评论理性友好，偶尔有吐槽但基于内容本身。91次元鼓励有价值的长评和细节挖掘，严禁剧透未播出内容。你可以放心浏览评论获取参考，也欢迎参与讨论。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何关注91次元的最新动态？</div>
+          <div class="faq-a">页面底部的资讯模块会汇总近期动漫相关新闻和社区活动。你可以定期访问91次元主页查看最新更新和热门推荐变化。目前暂不提供邮件订阅，但所有内容按时间线更新，方便直接回访。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section id="comments" class="section">
+      <div class="section-header">
+        <h2 class="section-title">💬 同好评论</h2>
+        <span class="section-sub">来自社区的近期发言</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-user"><div class="avatar">星</div><div><div class="comment-name">星尘旅人</div><div class="comment-date">2026-11-05</div></div></div><div class="comment-text">《记忆碎片》第9集信息量太大了，循环真相浮出水面，感觉前面全是伏笔。91次元的解析帖帮我理清了不少细节。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">刃</div><div><div class="comment-name">刃心</div><div class="comment-date">2026-11-04</div></div></div><div class="comment-text">《刃之继承者》完结了，最后一集作画爆炸，但剧情稍微赶了点。希望有第二季补完。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">猫</div><div><div class="comment-name">猫猫咖啡</div><div class="comment-date">2026-11-03</div></div></div><div class="comment-text">日常治愈番还是得看《猫咪与咖啡》，每集看完都很放松。91次元的评分挺准的。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">星</div><div><div class="comment-name">星空下的鱼</div><div class="comment-date">2026-11-02</div></div></div><div class="comment-text">《星海旅人》第10集那个反转没想到，不过节奏有点快，感觉可以多铺垫一集。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">放</div><div><div class="comment-name">放学别走</div><div class="comment-date">2026-11-01</div></div></div><div class="comment-text">《放学后的心动》第七集太真实了，那种距离感拿捏得刚好。91次元推荐理由写得很中肯。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">银</div><div><div class="comment-name">银河漫游者</div><div class="comment-date">2026-10-30</div></div></div><div class="comment-text">《银河边境》的机战戏份很足，希望后面文戏不要拖后腿。目前整体观感不错。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">异</div><div><div class="comment-name">异世界居民</div><div class="comment-date">2026-10-28</div></div></div><div class="comment-text">《异世界食堂2》还是熟悉的味道，下饭神器。91次元的分类里治愈系标签很实用。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">剑</div><div><div class="comment-name">剑与魔法</div><div class="comment-date">2026-10-27</div></div></div><div class="comment-text">《剑与魔法学院》竞技祭篇节奏不错，配角戏份也多了，比第一季好。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">路</div><div><div class="comment-name">路人甲</div><div class="comment-date">2026-10-25</div></div></div><div class="comment-text">91次元的界面挺清爽的，找番方便。不过希望增加更多冷门作品的推荐。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">秋</div><div><div class="comment-name">秋叶原</div><div class="comment-date">2026-10-23</div></div></div><div class="comment-text">本季新番整体质量不错，就是时间不太够追。感谢91次元的更新列表，一目了然。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">小</div><div><div class="comment-name">小透明</div><div class="comment-date">2026-10-21</div></div></div><div class="comment-text">深度解析写得挺认真的，不是那种水文。希望多出一些作画分析。</div></div>
+        <div class="comment-card"><div class="comment-user"><div class="avatar">追</div><div><div class="comment-name">追番狂魔</div><div class="comment-date">2026-10-20</div></div></div><div class="comment-text">《记忆碎片》的讨论帖质量很高，每次看完都要来91次元翻翻有没有新推论。</div></div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section id="news" class="section">
+      <div class="section-header">
+        <h2 class="section-title">📰 相关资讯</h2>
+        <span class="section-sub">近期动漫动态速览</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-item"><div class="news-date">2026-11-06</div><div class="news-title">《星海旅人》第10话播出后登上社区热搜</div><div class="news-summary">本集揭露星图碎片的真正来源，观众讨论热烈，91次元相关解析帖阅读量破万。</div></div>
+        <div class="news-item"><div class="news-date">2026-11-05</div><div class="news-title">《刃之继承者》最终话作画阵容公开</div><div class="news-summary">官方释出原画师名单，多位知名画师参与最终决战，粉丝期待值拉满。</div></div>
+        <div class="news-item"><div class="news-date">2026-11-03</div><div class="news-title">《记忆碎片》宣布推出设定集</div><div class="news-summary">包含未公开剧情草图和角色初期设定，预计12月发售，社区内已开启团购讨论。</div></div>
+        <div class="news-item"><div class="news-date">2026-11-01</div><div class="news-title">《猫咪与咖啡》完结纪念活动开启</div><div class="news-summary">官方发布感谢绘，91次元社区同步开启完结感想征集，优质留言将展示在专题页。</div></div>
+        <div class="news-item"><div class="news-date">2026-10-29</div><div class="news-title">《银河边境》第二季制作决定</div><div class="news-summary">第一季尚未完结，官方已宣布续作计划。91次元将跟进后续报道。</div></div>
+        <div class="news-item"><div class="news-date">2026-10-26</div><div class="news-title">秋季新番中期评分出炉，91次元用户参与投票</div><div class="news-summary">综合社区评分与讨论热度，《星海旅人》暂列第一，《记忆碎片》紧随其后。</div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2026 91次元 · 动漫同好社区</div>
+        <div class="footer-links">
+          <a href="/#hero">首页</a>
+          <a href="/#hot">热门</a>
+          <a href="/#latest">更新</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="disclaimer">
+        免责声明：本站内容基于社区讨论与编辑整理，仅供参考。所有作品信息以官方发布为准。友情链接：<a href="/#partner" style="color:#a09b97;text-decoration:underline;">合作联系</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 固定插入的脚本 -->
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                                                                                                                  </html>
